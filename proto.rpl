@@ -1,0 +1,24 @@
+// Path     (A: U) (a b: A): U = PathP (<i> A) a b
+// refl     (A: U) (a: A): Path A a a = <i> a
+theorem Refl:
+  (->
+    [ty : (U 0)]
+    [a : ty]
+    (path [_] ty a a))
+by {
+  lam _ a =>
+  abs _ => `a
+}.
+
+
+// singl (A: U) (a: A): U = (x: A) * Path A a x
+// theorem Singl:
+//   (->
+//     [ty: (U 0)]
+//     [a : ty]
+//     ty
+//   )
+// by {
+//   lam ty a =>
+//   abs x => `a
+// }.
